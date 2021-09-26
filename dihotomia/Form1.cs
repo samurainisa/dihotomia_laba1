@@ -13,30 +13,24 @@ namespace dihotomia
         public Form1()
         {
             InitializeComponent();
-
             GraphPane graphfield = zedGraphControl1.GraphPane;
             // Установим цвет рамки для всего компонента
             graphfield.Border.Color = Color.Black;
-
             // Установим цвет рамки вокруг графика
             graphfield.Chart.Border.Color = Color.Black;
-
             // Закрасим фон всего компонента ZedGraph
             // Заливка будет сплошная
             graphfield.Fill.Type = FillType.Solid;
             graphfield.Fill.Color = Color.FromArgb(50, 49, 69);
-
             // Закрасим область графика (его фон) в черный цвет
             graphfield.Chart.Fill.Type = FillType.Solid;
             graphfield.Chart.Fill.Color = Color.Black;
-
             // Включим показ оси на уровне X = 0 и Y = 0, чтобы видеть цвет осей
             graphfield.XAxis.MajorGrid.IsZeroLine = true;
             graphfield.YAxis.MajorGrid.IsZeroLine = true;
             // Установим цвет осей
             graphfield.XAxis.Color = Color.CornflowerBlue;
             graphfield.YAxis.Color = Color.CornflowerBlue;
-
             // Включим сетку
             graphfield.XAxis.MajorGrid.IsVisible = true;
             graphfield.YAxis.MajorGrid.IsVisible = true;
@@ -44,23 +38,18 @@ namespace dihotomia
             graphfield.XAxis.MajorGrid.Color = Color.FromArgb(62, 120, 138);
             graphfield.YAxis.MajorGrid.Color = Color.FromArgb(62, 120, 138);
             //62, 120, 138
-
             // Установим цвет для подписей рядом с осями
             graphfield.XAxis.Title.FontSpec.FontColor = Color.Silver;
             graphfield.YAxis.Title.FontSpec.FontColor = Color.Silver;
-
             // Установим цвет подписей под метками
             graphfield.XAxis.Scale.FontSpec.FontColor = Color.Silver;
             graphfield.YAxis.Scale.FontSpec.FontColor = Color.Silver;
-
             // Установим цвет заголовка над графиком
             graphfield.Title.FontSpec.FontColor = Color.White;
-
         }
         //движение мыши за форму
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -74,8 +63,6 @@ namespace dihotomia
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-
         private void рассчитатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             double amin, bmax;
@@ -84,11 +71,7 @@ namespace dihotomia
             GraphPane pane = zedGraphControl1.GraphPane;
             pane.CurveList.Clear();
             pane.GraphObjList.Clear();
-
-
-
-
-
+            //входные данные
             if (tbFX.Text == "")
             {
                 MessageBox.Show("Введите функцию");
@@ -122,7 +105,6 @@ namespace dihotomia
                 {
                     stack1.Add(x, f(x));
                 }
-
                 //Обозначение минимума на графике
                 double minX = Dichotomy(double.Parse(textBoxA.Text), double.Parse(tbB.Text), double.Parse(tbE.Text));
                 stack2.Add(minX, f(minX));
@@ -141,7 +123,6 @@ namespace dihotomia
 
             }
         }
-
         //Очистка
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -152,8 +133,6 @@ namespace dihotomia
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
         }
-
-
         //Функция
         private double f(double x)
         {
@@ -162,8 +141,6 @@ namespace dihotomia
             x_arg.setArgumentValue(x);
             return fx.calculate();
         }
-
-
         //Расчёт дихотомии
         private double Dichotomy(double a, double b, double e)
         {
@@ -181,27 +158,9 @@ namespace dihotomia
                     a = x;
                 }
             }
-
             x = (a + b) / 2;
             return x;
-
-
         }
-
-
-        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-/*
-        char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8 && number != 45) // цифры и клавиша BackSpace
-        {
-            e.Handled = true;
-        }*/
-
-
         private void tbB_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
@@ -210,7 +169,6 @@ namespace dihotomia
                 e.Handled = true;
             }
         }
-
         private void tbE_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
@@ -219,11 +177,14 @@ namespace dihotomia
                 e.Handled = true;
             }
         }
-
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 newForm2 = new Form2();
             newForm2.Show();
+        }
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -164,14 +164,20 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="закрытьToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
   <data name="закрытьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
+    <value>68, 21</value>
   </data>
   <data name="закрытьToolStripMenuItem.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
+  <data name="справкаToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
   <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Справка</value>

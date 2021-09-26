@@ -80,16 +80,16 @@ namespace dihotomia
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            resources.ApplyResources(this.закрытьToolStripMenuItem, "закрытьToolStripMenuItem");
             this.закрытьToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            resources.ApplyResources(this.закрытьToolStripMenuItem, "закрытьToolStripMenuItem");
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
+            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
             this.справкаToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // zedGraphControl1
