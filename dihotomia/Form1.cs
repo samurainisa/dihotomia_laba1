@@ -114,9 +114,12 @@ namespace dihotomia
                 double minX = Dichotomy(double.Parse(tbA.Text), double.Parse(tbB.Text), double.Parse(tbE.Text));
                 stack2.Add(minX, f(minX));
                 min.Text = Convert.ToString(minX);
+                //цвет графика и метки
                 LineItem Curve = pane.AddCurve(tbFX.Text, stack1, Color.FromArgb(184, 57, 8), SymbolType.None);
                 LineItem Min = pane.AddCurve("Минимум", stack2, Color.DarkCyan, SymbolType.XCross);
+                //обновление графика
                 zedGraphControl1.AxisChange();
+
                 Argument x_arg = new Argument("x");
                 Curve.Line.Width = 2.0F;
                 GraphPane graphfield = zedGraphControl1.GraphPane;
