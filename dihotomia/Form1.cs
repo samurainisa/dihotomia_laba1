@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
 using org.mariuszgromada.math.mxparser;
@@ -63,6 +57,7 @@ namespace dihotomia
             graphfield.Title.FontSpec.FontColor = Color.White;
 
         }
+        //движение мыши за форму
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -92,26 +87,44 @@ namespace dihotomia
 
 
 
-            if (tbA.Text == "")
+
+
+            if (tbFX.Text == "")
             {
-                MessageBox.Show("Введите A");
+                MessageBox.Show("Введите функцию");
+            }
+            else if (textBoxA.Text == "")
+            {
+                MessageBox.Show("Введите А");
             }
             else if (tbB.Text == "")
             {
                 MessageBox.Show("Введите B");
             }
+            else if (textBoxA.Text == tbB.Text)
+            {
+                MessageBox.Show("Границы не могут быть равны");
+            }
+            else if (tbE.Text == "")
+            {
+                MessageBox.Show("Укажите точность");
+            }
+            else if (tbE.Text == "0,")
+            {
+                MessageBox.Show("Точность введена неверно");
+            }
             else
             {
-                amin = Convert.ToDouble(tbA.Text);
+                amin = Convert.ToDouble(textBoxA.Text);
                 bmax = Convert.ToDouble(tbB.Text);
                 //Отрисовка графика по границам
                 for (double x = amin; x <= bmax; x += 0.1)
                 {
                     stack1.Add(x, f(x));
                 }
-                //Обозначение минимума на графике
 
-                double minX = Dichotomy(double.Parse(tbA.Text), double.Parse(tbB.Text), double.Parse(tbE.Text));
+                //Обозначение минимума на графике
+                double minX = Dichotomy(double.Parse(textBoxA.Text), double.Parse(tbB.Text), double.Parse(tbE.Text));
                 stack2.Add(minX, f(minX));
                 min.Text = Convert.ToString(minX);
                 //цвет графика и метки
@@ -171,8 +184,9 @@ namespace dihotomia
 
             x = (a + b) / 2;
             return x;
-        }
 
+
+        }
 
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,19 +194,13 @@ namespace dihotomia
             Close();
         }
 
-        private void tbFX_keyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char number = e.KeyChar;
+/*
+        char number = e.KeyChar;
             if (!Char.IsDigit(number) && number != 8 && number != 45) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
-        }
+        {
+            e.Handled = true;
+        }*/
+
 
         private void tbB_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -210,6 +218,12 @@ namespace dihotomia
             {
                 e.Handled = true;
             }
+        }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 newForm2 = new Form2();
+            newForm2.Show();
         }
     }
 }

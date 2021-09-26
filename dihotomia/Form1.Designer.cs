@@ -35,17 +35,18 @@ namespace dihotomia
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.labmin = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.tbFX = new System.Windows.Forms.TextBox();
-            this.tbA = new System.Windows.Forms.TextBox();
             this.tbB = new System.Windows.Forms.TextBox();
             this.tbE = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxA = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@ namespace dihotomia
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.рассчитатьToolStripMenuItem,
             this.очиститьToolStripMenuItem,
-            this.закрытьToolStripMenuItem});
+            this.закрытьToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -82,6 +84,13 @@ namespace dihotomia
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             resources.ApplyResources(this.закрытьToolStripMenuItem, "закрытьToolStripMenuItem");
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // zedGraphControl1
             // 
@@ -116,16 +125,6 @@ namespace dihotomia
             resources.ApplyResources(this.tbFX, "tbFX");
             this.tbFX.ForeColor = System.Drawing.Color.Black;
             this.tbFX.Name = "tbFX";
-            this.tbFX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFX_keyPress);
-            // 
-            // tbA
-            // 
-            this.tbA.BackColor = System.Drawing.Color.Silver;
-            this.tbA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.tbA, "tbA");
-            this.tbA.ForeColor = System.Drawing.Color.Black;
-            this.tbA.Name = "tbA";
-            this.tbA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbA_KeyPress);
             // 
             // tbB
             // 
@@ -169,18 +168,26 @@ namespace dihotomia
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Name = "label6";
             // 
+            // textBoxA
+            // 
+            this.textBoxA.BackColor = System.Drawing.Color.Silver;
+            this.textBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxA, "textBoxA");
+            this.textBoxA.ForeColor = System.Drawing.Color.Black;
+            this.textBoxA.Name = "textBoxA";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.textBoxA);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbE);
             this.Controls.Add(this.tbB);
-            this.Controls.Add(this.tbA);
             this.Controls.Add(this.tbFX);
             this.Controls.Add(this.min);
             this.Controls.Add(this.labmin);
@@ -205,7 +212,6 @@ namespace dihotomia
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbE;
         private System.Windows.Forms.TextBox tbB;
-        private System.Windows.Forms.TextBox tbA;
         private System.Windows.Forms.TextBox tbFX;
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label labmin;
@@ -214,6 +220,8 @@ namespace dihotomia
         private System.Windows.Forms.ToolStripMenuItem рассчитатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem очиститьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBoxA;
     }
 }
 
